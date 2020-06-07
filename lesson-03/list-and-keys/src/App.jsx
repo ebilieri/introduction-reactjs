@@ -14,7 +14,7 @@ const listCustomer = [
   {
     id: 3,
     name: 'Fulano de Tal',
-    skills: ['Assembly']
+    skills: ['Assembly', 'C#', 'C++']
   },
   {
     id: 4,
@@ -25,20 +25,24 @@ const listCustomer = [
 
 const App = () => {
 
-  const renderCustomers = (customer, index) => {
+  const renderCustomers = (customer) => {
     return (
-      <div key={`customer-${customer.id}`}>
-        <li>{customer.name}</li>
-        {customer.skills.map(renderSkills)}
-      </div>
+      <li key={`customer-${customer.id}`}>
+        {customer.name}
+
+        {/* render skillss */}
+        <ul>
+          {customer.skills.map(renderSkills)}
+        </ul>
+      </li>
     )
   }
 
   const renderSkills = (skill, index) => {
     return (
-      <div style={{ paddingLeft: '30px' }} key={`skill-${index}`}>
-        <li>{skill}</li>
-      </div>
+      <li style={{ paddingLeft: '30px' }} key={`skill-${index}`}>
+        {skill}
+      </li>
     )
   }
 

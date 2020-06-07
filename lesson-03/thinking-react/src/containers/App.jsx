@@ -12,7 +12,10 @@ const App = () => {
   const renderCustomers = (customer, index) => {
     return (
       <div key={`customer-${customer.id}`}>
-        <li>{customer.name}  <Button onClick={() => handleClick(customer.id)}>Deletar o Cliente </Button></li>
+        <li>
+          {customer.name}
+          <Button onClick={() => handleClick(customer.id)}>Deletar o Cliente </Button>
+        </li>
         {customer.skills.map(renderSkills)}
       </div>
     )
